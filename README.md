@@ -1,12 +1,12 @@
 # Test Repository for Nuxt-VueFire on Vercel / Firebase / Local
 
-Discussion on the VueFire repo have made me try to test and see how to achieve SSR on vercel and firebase.
+[Discussion on the VueFire repo](https://github.com/vuejs/vuefire/issues/1297) made me try to test and see how to achieve SSR on Vercel, Firebase, and localhost.
 
-This repo is a demonstration of how to do this and especially how to configure the Google `serviceAccount` without having the file in your repositroy and the private key exposed.
+This repo is a demonstration of how to do this and how to configure the Google `serviceAccount` without having the file in your repositroy and the private key exposed.
 
-Please note that I am not a security researcher and I would not guarantee that the PRIVATE KEY does not show up in the public facing files.
+Please note that I am not a security researcher and I do not guarantee that the PRIVATE KEY does not show up in any public facing files.
 
-However, from what I can tell, the way the deploy works the server side `serviceAccount` is not available in the frontend javascript files.
+From what I can tell, the way the deploy works the server side `serviceAccount` is not available in the frontend javascript files.
 
 ## Setup / Learnings
 
