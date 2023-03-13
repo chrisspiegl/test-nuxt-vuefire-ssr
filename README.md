@@ -1,5 +1,7 @@
 # Test Repository for Nuxt-VueFire on Vercel / Firebase / Local
 
+**WARNING:** the directory name `test-nuxt-vuefire-ssr` for some reason has the whole thing breaking and throwing errors. Rename the main folder to `test-ssr` and it works. I have no idea why this is the case but it is.
+
 [Discussion on the VueFire repo](https://github.com/vuejs/vuefire/issues/1297) made me try to test and see how to achieve SSR on Vercel, Firebase, and localhost.
 
 This repo is a demonstration of how to do this and how to configure the Google `serviceAccount` without having the file in your repositroy and the private key exposed.
