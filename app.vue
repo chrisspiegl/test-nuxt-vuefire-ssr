@@ -1,14 +1,20 @@
 <script lang="ts" setup>
-import { signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth"
+import { signInWithPopup, GoogleAuthProvider, signOut, signInWithRedirect } from "firebase/auth"
 import { collection } from "firebase/firestore";
 
 const auth = useFirebaseAuth()
 const user = useCurrentUser()
 const testCollection = useCollection(collection(useFirestore(), "test-collection"))
 
-const login = () => {
+const loginPopup = () => {
     if (auth) {
         signInWithPopup(auth, new GoogleAuthProvider())
+    }
+}
+
+const loginRedirect = () => {
+    if (auth) {
+        signInWithRedirect(auth, new GoogleAuthProvider())
     }
 }
 
@@ -22,7 +28,10 @@ const logout = () => {
 <template>
     <div>
         <div>hello</div>
-        <button v-if="user == null" @click="login">Login</button>
+        <div v-if="user === null">
+          <button @click="loginPopup">Login (Popup)</button>
+          <button @click="loginRedirect">Login (Redirect)</button>
+        </div>
         <button v-else @click="logout">Logout</button>
         <div>
           <h2>Server Info (individual user fields work on server and should SSR):</h2>
