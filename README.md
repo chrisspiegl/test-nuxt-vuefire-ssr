@@ -67,14 +67,14 @@ This leads to the local development connecting to the live auth / firestore for 
 
 The setup with local emulators can then also be achieved, though this is not something I tested at this time.
 
-## Learnigns about Signin by Redirect / PopUp
+## Learnigns about SignIn by Redirect / PopUp
 
 The redirect method works fine in chrome. But there aer some issues with the login when using other browsers that are more strict with their cookies and policies? Not exactly sure.
 
-But `signinWithPopup` works fine in Safari, Firefox, and Chrome.
+But `signInWithPopup` works fine in Safari, Firefox, and Chrome.
 
-Whereas `signinWithRedirect` works in Chrome and the others probably would work with a strict setup following the best practices from [Firebase Auth layed out here](https://firebase.google.com/docs/auth/web/redirect-best-practices).
+Whereas `signInWithRedirect` works in Chrome and the others probably would work with a strict setup following the best practices from [Firebase Auth layed out here](https://firebase.google.com/docs/auth/web/redirect-best-practices).
 
-Long story short: the easiest method is to use `signinWithPopup` and not worry about the redirect method when deploying on Vercel.
+Long story short: the easiest method is to use `signInWithPopup` and not worry about the redirect method when deploying on Vercel.
 
 On Firebase, you can easily use the redirect method since you can set the `FIREBASE_AUTH_DOMAIN` in your environemnt varaible and the whole `/__auth/` redirects are handled transparently by firebase.
