@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+        "source": "/__/auth(.*)",
+        "destination": "https://chris-spiegl-testing.firebaseapp.com/__/auth$1"
+    }
+  ]
+}
