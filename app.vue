@@ -2,15 +2,16 @@
 import { signInWithRedirect, GoogleAuthProvider, signOut } from "firebase/auth"
 import { collection } from "firebase/firestore";
 
-console.log('FIREBASE_PROJECT_ID', process.env.FIREBASE_PROJECT_ID)
-console.log('FIREBASE_CLIENT_EMAIL', process.env.FIREBASE_CLIENT_EMAIL)
-console.log('FIREBASE_PRIVATE_KEY', process.env.FIREBASE_PRIVATE_KEY)
-console.log('FIREBASE_API_KEY', process.env.FIREBASE_API_KEY)
-console.log('FIREBASE_AUTH_DOMAIN', process.env.FIREBASE_AUTH_DOMAIN)
-console.log('FIREBASE_PROJECT_ID', process.env.FIREBASE_PROJECT_ID)
-console.log('FIREBASE_STORAGE_BUCKET', process.env.FIREBASE_STORAGE_BUCKET)
-console.log('FIREBASE_MESSAGING_SENDER_ID', process.env.FIREBASE_MESSAGING_SENDER_ID)
-console.log('FIREBASE_APP_ID', process.env.FIREBASE_APP_ID)
+console.log('🔥 Testing if the process.env.FIREBASE_* stuff ends up in the browser or just on the server');
+console.log('FIREBASE_PROJECT_ID', process?.env?.FIREBASE_PROJECT_ID)
+console.log('FIREBASE_CLIENT_EMAIL', process?.env?.FIREBASE_CLIENT_EMAIL)
+console.log('FIREBASE_PRIVATE_KEY', process?.env?.FIREBASE_PRIVATE_KEY)
+console.log('FIREBASE_API_KEY', process?.env?.FIREBASE_API_KEY)
+console.log('FIREBASE_AUTH_DOMAIN', process?.env?.FIREBASE_AUTH_DOMAIN)
+console.log('FIREBASE_PROJECT_ID', process?.env?.FIREBASE_PROJECT_ID)
+console.log('FIREBASE_STORAGE_BUCKET', process?.env?.FIREBASE_STORAGE_BUCKET)
+console.log('FIREBASE_MESSAGING_SENDER_ID', process?.env?.FIREBASE_MESSAGING_SENDER_ID)
+console.log('FIREBASE_APP_ID', process?.env?.FIREBASE_APP_ID)
 
 const auth = useFirebaseAuth()
 const user = useCurrentUser()

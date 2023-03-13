@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   firebase: ^9.17.2
   firebase-admin: ^11.5.0
+  firebase-functions: ^4.2.1
   firebase-tools: ^11.24.1
   nuxt: ^3.2.3
   nuxt-vuefire: ^0.1.6
@@ -12,9 +13,10 @@ specifiers:
 dependencies:
   firebase: 9.17.2
   firebase-admin: 11.5.0
+  firebase-functions: 4.2.1_firebase-admin@11.5.0
   firebase-tools: 11.24.1
   nuxt: 3.2.3
-  nuxt-vuefire: 0.1.6_t3irn4mxmx4k5dkbmk4dzynpqy
+  nuxt-vuefire: 0.1.6_bpzgo5orsskfovqzq52bc64zem
   vue: 3.2.47
   vuefire: 3.1.0_firebase@9.17.2+vue@3.2.47
 
@@ -2275,6 +2277,12 @@ packages:
       '@types/node': 18.15.0
     dev: false
 
+  /@types/cors/2.8.13:
+    resolution: {integrity: sha512-RG8AStHlUiV5ysZQKq97copd2UmVYw3/pRMLefISZ3S1hK104Cwm7iLQ3fTKx+lsUH2CE8FlLaYeEA2LSeqYUA==}
+    dependencies:
+      '@types/node': 18.15.0
+    dev: false
+
   /@types/duplexify/3.6.1:
     resolution: {integrity: sha512-n0zoEj/fMdMOvqbHxmqnza/kXyoGgJmEpsXjpP+gEqE1Ye4yNqc7xWipKnUoMpWhMuzJQSfK2gMrwlElly7OGQ==}
     dependencies:
@@ -2299,6 +2307,14 @@ packages:
       '@types/body-parser': 1.19.2
       '@types/express-serve-static-core': 4.17.33
       '@types/qs': 6.9.7
+      '@types/serve-static': 1.15.1
+    dev: false
+
+  /@types/express/4.17.3:
+    resolution: {integrity: sha512-I8cGRJj3pyOLs/HndoP+25vOqhqWkAZsWMEmq1qXy/b/M3ppufecUwaK2/TVDVxcV61/iSdhykUjQQ2DLSrTdg==}
+    dependencies:
+      '@types/body-parser': 1.19.2
+      '@types/express-serve-static-core': 4.17.33
       '@types/serve-static': 1.15.1
     dev: false
 
@@ -4525,6 +4541,24 @@ packages:
       - supports-color
     dev: false
 
+  /firebase-functions/4.2.1_firebase-admin@11.5.0:
+    resolution: {integrity: sha512-+NjbI6TD3ivuoT7B3oC4iwRlt41QDTcYowo3TO88ZyMHmjCzlrbiuAjiPzz/zfwgi3+GCoP1tztHOQHhDGYE5w==}
+    engines: {node: '>=14.10.0'}
+    hasBin: true
+    peerDependencies:
+      firebase-admin: ^10.0.0 || ^11.0.0
+    dependencies:
+      '@types/cors': 2.8.13
+      '@types/express': 4.17.3
+      cors: 2.8.5
+      express: 4.18.2
+      firebase-admin: 11.5.0
+      node-fetch: 2.6.9
+    transitivePeerDependencies:
+      - encoding
+      - supports-color
+    dev: false
+
   /firebase-tools/11.24.1:
     resolution: {integrity: sha512-X9p15dZLaR3jbMKvtQgj364khq9EEeC3+PXK0Bo8lwe0XasFmq3d5XsD7XS+a5iziCC7sqzhIiuiUfn5yjYgAg==}
     engines: {node: ^14.18.0 || >=16.4.0}
@@ -6673,7 +6707,7 @@ packages:
       fsevents: 2.3.2
     dev: false
 
-  /nuxt-vuefire/0.1.6_t3irn4mxmx4k5dkbmk4dzynpqy:
+  /nuxt-vuefire/0.1.6_bpzgo5orsskfovqzq52bc64zem:
     resolution: {integrity: sha512-jK/ci0iCEHJ46aK9tm84CwNskmp1AgR0MD8XyjNb9ICZgTQnoTPPy+yJ3hSt2bw99bklWKMbFJ2pP30aIMC8sQ==}
     peerDependencies:
       '@firebase/app-types': '>=0.8.1'
@@ -6692,6 +6726,7 @@ packages:
       '@nuxt/kit': 3.2.3
       firebase: 9.17.2
       firebase-admin: 11.5.0
+      firebase-functions: 4.2.1_firebase-admin@11.5.0
       lru-cache: 7.18.3
       vuefire: 3.1.0_firebase@9.17.2+vue@3.2.47
     transitivePeerDependencies:

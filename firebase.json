@@ -1,0 +1,17 @@
+{
+  "functions": {
+    "source": ".output/server"
+  },
+  "hosting": [
+      {
+          "target": "website",
+          "public": ".output/public",
+          "cleanUrls": true,
+          "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+          "rewrites": [{
+            "source": "**",
+            "function": "server"
+          }]
+      }
+  ]
+}
