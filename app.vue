@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { signInWithRedirect, GoogleAuthProvider, signOut } from "firebase/auth"
+import { signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth"
 import { collection } from "firebase/firestore";
 
 const auth = useFirebaseAuth()
@@ -8,7 +8,7 @@ const testCollection = useCollection(collection(useFirestore(), "test-collection
 
 const login = () => {
     if (auth) {
-        signInWithRedirect(auth, new GoogleAuthProvider())
+        signInWithPopup(auth, new GoogleAuthProvider())
     }
 }
 
