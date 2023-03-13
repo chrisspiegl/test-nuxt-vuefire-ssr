@@ -1,17 +1,18 @@
 {
   "functions": {
-    "source": ".output/server"
+    "codebase": "hosting-website",
+    "source": ".output/server",
+    "ignore": ["**/.*", "**/node_modules/**", "*.log"]
   },
-  "hosting": [
-      {
-          "target": "website",
-          "public": ".output/public",
-          "cleanUrls": true,
-          "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-          "rewrites": [{
-            "source": "**",
-            "function": "server"
-          }]
-      }
-  ]
+  "hosting": [{
+      "target": "website",
+      "public": ".output/public",
+      "cleanUrls": true,
+      "trailingSlash": false,
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**", "*.log"],
+      "rewrites": [{
+        "source": "**",
+        "function": "server"
+      }]
+  }]
 }
