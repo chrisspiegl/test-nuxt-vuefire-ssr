@@ -8,6 +8,8 @@ Please note that I am not a security researcher and I do not guarantee that the 
 
 From what I can tell, the way the deploy works the server side `serviceAccount` is not available in the frontend javascript files.
 
+Additional learnings about the login methods for social logins (Google Auth tested) are blow.
+
 ## Setup / Learnings
 
 Generally, the workaround is that we have to set `GOOGLE_APPLICATION_CREDENTIALS` to something. This is, because, there is a check in the vuefire codebase for the service account credentials based on this environment variable.
@@ -64,3 +66,15 @@ Then I have the `pnpm dev` and `pnpm build:local` use the `.env.local` via the `
 This leads to the local development connecting to the live auth / firestore for everything.
 
 The setup with local emulators can then also be achieved, though this is not something I tested at this time.
+
+## Learnigns about Signin by Redirect / PopUp
+
+The redirect method works fine in chrome. But there aer some issues with the login when using other browsers that are more strict with their cookies and policies? Not exactly sure.
+
+But `signinWithPopup` works fine in Safari, Firefox, and Chrome.
+
+Whereas `signinWithRedirect` works in Chrome and the others probably would work with a strict setup following the best practices from [Firebase Auth layed out here](https://firebase.google.com/docs/auth/web/redirect-best-practices).
+
+Long story short: the easiest method is to use `signinWithPopup` and not worry about the redirect method when deploying on Vercel.
+
+On Firebase, you can easily use the redirect method since you can set the `FIREBASE_AUTH_DOMAIN` in your environemnt varaible and the whole `/__auth/` redirects are handled transparently by firebase.
