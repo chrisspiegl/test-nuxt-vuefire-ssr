@@ -57,7 +57,7 @@ So, I got it workign via:
 
 - Run Locally: `pnpm build:firebase`
 - Settings in `firebase.json` and `.firebaserc` (have a look into the files for pointers).
-- Deploy via; `pnpm deploy`
+- Deploy via: `pnpm deploy:firebase`
 
 ### Local Development
 
