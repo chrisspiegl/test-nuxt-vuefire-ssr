@@ -1,0 +1,19 @@
+# For Local Testing with Cloudflare Pages we must provide the full set of environment variables.
+# When using the local emulators, you could set some random things for most of these since the emulator does not verify the private key from what I can tell and thus you'd make sure that you are not 'accidentally' accessing your live data.
+# But if you want to work with live data from the local environment, then ofcourse you need to provide that info here.
+
+# VUEFIRE Firebase Authentication Service Account (path if using it, something random if you want to use the below config cause it needs to be defined even if you don't use it).
+# This is probably not necessary when deploying to google cloud functions (firebase functions) since the env is initialized automatically.
+# GOOGLE_APPLICATION_CREDENTIALS = ./.firebase-service-account.emulator.json
+GOOGLE_APPLICATION_CREDENTIALS = "WORKAROUND_MUST_PROVIDE_SOMETHING"
+
+# These can be set by the user on other platforms.
+FIREBASE_PROJECT_ID = 
+FIREBASE_CLIENT_EMAIL = 
+FIREBASE_PRIVATE_KEY = ""
+
+FIREBASE_API_KEY = ""
+FIREBASE_AUTH_DOMAIN = "chris-spiegl-testing.firebaseapp.com"
+FIREBASE_STORAGE_BUCKET = "chris-spiegl-testing.appspot.com"
+FIREBASE_MESSAGING_SENDER_ID = ""
+FIREBASE_APP_ID = ""

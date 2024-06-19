@@ -1,3 +1,17 @@
+# Current Status:
+
+- This repository is a test to get cloudflare to run Firebase Firestore functionality without needing any of the custom REST apis.
+- Current Status is: not working…
+- Issue is that there are so many libs which are used and come from node environment.
+- Using `unenv` to try to replace them; but that's not really working especially with the `proxy` replacements.
+- Proxy replacements don't really have the functionality they are pretending to have.
+- They just pretend they have it and then throw errors mostly of the "TypeError: Cannot convert object to primitive value"
+
+# Cloudflare Pages + Firebase & Process.Env Variables.
+
+- process.env.XXXX is not available and runtimeConf is problematic as well…
+- So, I patched the node_modules/nodepack to support env to process.env mapping and it worked.
+
 # Test Repository for Nuxt-VueFire on Vercel / Firebase / Local
 
 **WARNING:** the directory name `test-nuxt-vuefire-ssr` for some reason has the whole thing breaking and throwing errors. Rename the main folder to `test-ssr` and it works. I have no idea why this is the case but it is.

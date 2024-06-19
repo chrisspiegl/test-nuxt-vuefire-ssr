@@ -3,6 +3,8 @@
 .env
 .env*
 !.env.*.example
+.dev.vars
+!.dev.vars*.template
 .firebase
 .firebaserc
 .nitro

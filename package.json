@@ -1,22 +1,46 @@
 {
   "private": true,
+  "type": "module",
   "scripts": {
+    "build:cloudflare:local": "NITRO_PRESET=cloudflare_pages nuxt build --dotenv .env.local",
+    "build:cloudflare:production": "NITRO_PRESET=cloudflare_pages nuxt build --dotenv .env.cloudflare",
     "build:local": "nuxt build --dotenv .env.local",
     "build:vercel": "NITRO_PRESET=vercel nuxt build",
     "build:firebase": "NITRO_PRESET=firebase nuxt build --dotenv .env.firebase",
     "dev": "nuxt dev --dotenv .env.local",
+    "preview:wrangler": "run-s build:cloudflare:local run:wrangler:dev",
+    "run:wrangler:dev": "wrangler pages dev dist/ --experimental-local --live-reload --env local --compatibility-flag nodejs_compat",
     "preview": "nuxt preview",
     "deploy:firebase": "firebase deploy",
+    "deploy:wrangler": "wrangler publish",
+    "deploy:wrangler:pages": "wrangler pages publish --compatibility-flag nodejs_compat",
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "firebase": "^9.17.2",
+    "@cloudflare/workers-types": "^4.20230321.0",
+    "@miniflare/tre": "3.0.0-next.12",
+    "@rollup/plugin-alias": "^4.0.3",
+    "@rollup/plugin-commonjs": "^24.0.1",
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-typescript": "^11.0.0",
+    "firebase": "^9.18.0",
     "firebase-admin": "^11.5.0",
     "firebase-functions": "^4.2.1",
-    "firebase-tools": "^11.24.1",
-    "nuxt": "^3.2.3",
+    "firebase-tools": "^11.25.1",
+    "npm-run-all": "^4.1.5",
+    "nuxt": "^3.3.1",
     "nuxt-vuefire": "^0.1.6",
+    "rollup": "^3.20.1",
+    "rollup-plugin-node-polyfills": "^0.2.1",
+    "tslib": "^2.5.0",
+    "typescript": "^5.0.2",
+    "unenv": "^1.2.2",
     "vue": "^3.2.47",
-    "vuefire": "^3.1.0"
+    "vuefire": "^3.1.0",
+    "wrangler": "^2.13.0"
+  },
+  "devDependencies": {
+    "rollup-plugin-polyfill-node": "^0.12.0"
   }
 }

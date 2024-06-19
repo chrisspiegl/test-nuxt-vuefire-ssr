@@ -1,0 +1,44 @@
+{
+  "editor.glyphMargin": false,
+  "unocss.root": "hosting/website",
+  "cSpell.words": [
+    "antfu",
+    "esno",
+    "niyama",
+    "NUXT",
+    "vuefire",
+    "iconify",
+    "intlify",
+    "nuxi",
+    "Nuxt",
+    "nuxtjs",
+    "pinia",
+    "Reiher",
+    "squircle",
+    "vueuse"
+  ],
+  "search.exclude": {
+    "*.bundle.js": true,
+    "*.min.js": true,
+    "dist": true
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": false
+  },
+  "editor.formatOnSave": false,,
+  "i18n-ally.keysInUse": [
+    "time_ago_options.*",
+    "visibility.*"
+  ],
+  "i18n-ally.keystyle": "nested",
+  "i18n-ally.localesPaths": [
+    "locales"
+  ],
+  "i18n-ally.preferredDelimiter": "_",
+  "i18n-ally.sortKeys": true,
+  "i18n-ally.sourceLanguage": "en",
+  "prettier.enable": false,
+  "volar.completion.preferredTagNameCase": "pascal",
+  "volar.completion.preferredAttrNameCase": "kebab",
+  "typewriterScrollMode.enable": false
+}
